@@ -1,7 +1,7 @@
 var privateName = "ploni"; //
 var lastName = "almoni";
 var height = 188;
-var weight = 75;
+var weight = 74;
 var gender = "male";
 var age = 30;
 var exerciseLevelValue = 0; //
