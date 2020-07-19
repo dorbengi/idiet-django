@@ -70,6 +70,7 @@ def createnewmeal(request):
           form = AddMealForm(request.POST)
           newmeal = form.save(commit=False)
           newmeal.user_id = request.user
+          newmeal.meal_calories = "389"
           newmeal.save()
           return redirect('mymeals')
         except ValueError:
