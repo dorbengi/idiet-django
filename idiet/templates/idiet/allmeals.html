@@ -107,12 +107,12 @@
                         <!-- Card Header -->
                         <div class="card-header">
                             <div>
-                                <p>{{user.username}}</p>
+                                <p>{{u.username}}</p>
                                 <p> id {{ m.id }}</p>
                             </div>
                             <div>
                                 {% if m.user_id_id == user.id %}
-                                <a href="/meal/{{ m.id }}">Eit</a>
+                                <a href="/meal/{{ m.id }}">Edit</a>
                                 <!-- -->
                                 {% else %}
                                 <a href="/assigntome/{{ m.id }}">Tip</a>
