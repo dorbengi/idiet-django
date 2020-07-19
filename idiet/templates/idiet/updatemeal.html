@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>IDIET Add New Meal</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'idiet/style.css' %}">
+    <script src="https://kit.fontawesome.com/43915e3dcb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+
+<body>
+
+    <!-- SIDE NAVBAR -->
+    <div class="sidenav">
+        <a href="../../dashboard">idiet</a>
+        <hr>
+        <!-- Topbar Navbar -->
+        <ul>
+            <!-- Nav Item - Profile -->
+            <li>
+                <a href="../../dashboard">Dashboard</a>
+            </li>
+            <!-- Nav Item - Add meal -->
+            <li>
+                <a href="../../createnewmeal">add meal</a>
+            </li>
+            <!-- Nav Item - my meals -->
+            <li>
+                <a href="../../mymeals">my meals</a>
+            </li>
+            <!-- Nav Item - Guide -->
+            <li>
+                <a href="#">Guide</a>
+            </li>
+            <!-- Nav Item - Settings -->
+            <li>
+                <a href="#">Settings</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /SIDE NAVBAR -->
+
+    <!--  -->
+
+    <!-- CONTENT -->
+    <div id="content">
+
+        <!-- TOP NAVBAR -->
+        <nav class="navbar navbar-expand mb-4">
+            <!-- Nav -->
+            <ul class="navbar-nav">
+                <!-- Nav Item - Alerts -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#" role="button">
+                        <i class="fas fa-bell fa-fw"></i>
+                    </a>
+                </li>
+                <!-- Nav Item - Messages -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#" role="button">
+                        <i class="fas fa-envelope fa-fw"></i>
+                    </a>
+                </li>
+                <!-- Nav Item - User Information -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#" role="button">
+                        <span id="user-name"></span>
+                        <img class="img-profile rounded-circle" style="width: 60px; height: 60px;" src="https://www.manufacturingusa.com/sites/manufacturingusa.com/files/default.png">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /TOP NAVBAR -->
+
+        <!-- MAIN -->
+        <main>
+            {% if user.is_authenticated %}
+            <!-- Meal Card  -->
+            <div id="display-meal" class="col-xl-10 mb-4">
+                <div class="card">
+                    <!-- Card Header -->
+                    <div class="card-header">
+                        <h5>update meal</h5>
+                        <h6>{{meal.id}}</h6>
+                    </div>
+                    <!-- Card Body -->
+                    <div class="card-body up">
+                        <form action="#" method="POST">
+                            {% csrf_token %}
+                            <h2>{{errMsg}}</h2>
+                            {{form.as_p}}
+                            <button type="submit">update </button>
+                        </form>
+                        <form action="{% url 'delete' meal.id %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit">delete </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+        </main>
+        <!-- /MAIN -->
+
+        <!--  -->
+
+        <!-- FOOTER -->
+        <footer class="sticky-footer">
+            <div class="copyright text-center">
+                <span>Copyright © FT & DBG</span>
+            </div>
+        </footer>
+
+
+    </div>
+
+
+
+    <!-- spells -->
+
+
+</body>
+
+</html>

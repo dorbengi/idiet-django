@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>IDIET</title>
+    <!-- Scrolls -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'idiet/style.css' %}">
+    <script src="https://kit.fontawesome.com/43915e3dcb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="    https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!-- CONTENT -->
+    <div id="contentindex">
+        <main>
+            <div class="i-container">
+                <div>
+                    <h1>login</h1>
+                </div>
+                <div>
+
+                    <form action="#" method="POST">
+                        {% csrf_token %}
+                        <!-- -->
+                        {{form.as_p}}
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+                <h2>{{errMsg}}</h2>
+            </div>
+
+        </main>
+        <!-- FOOTER -->
+        <footer class="sticky-footer">
+            <div class="copyright text-center">
+                <span>Copyright © FT & DBG</span>
+            </div>
+        </footer>
+    </div>
+    <!-- /CONTENT  -->
+
+
+
+    <!-- Spells -->
+
+</body>
+
+</html>

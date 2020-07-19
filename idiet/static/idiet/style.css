@@ -1,0 +1,961 @@
+    @import url("https://fonts.googleapis.com/css?family=Luckiest+Guy|Roboto|Raleway");
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    html,
+    body {
+        min-height: 100%;
+    }
+    
+    body {
+        font-family: "Raleway", cursive !important;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    header,
+    main,
+    nav,
+    article,
+    section,
+    footer {
+        display: block;
+    }
+    /* nurtrients result, button */
+    
+    .nurtrients-result {
+        padding-left: 50px;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: .05rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    /* nurtrients result, button */
+    
+    .nurtrients-result-btn {
+        margin-left: 50px !important;
+        margin-top: 50px !important;
+        font-weight: 600 !important;
+    }
+    /* .dummy-div {
+    display: none;
+} */
+    /* Fixed sidenav, full height */
+    
+    .sidenav {
+        min-height: 100vmin;
+        width: 18%;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #4e73df;
+        overflow-x: hidden;
+        padding-top: 20px;
+        text-align: center;
+    }
+    /* sidenav header */
+    
+    .sidenav a {
+        color: white;
+        height: 3.650rem;
+        text-decoration: none;
+        font-size: 2rem;
+        font-weight: 900;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: .08rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .sidenav a:hover {
+        color: #1cc88a;
+        height: 3.650rem;
+        text-decoration: none;
+    }
+    /* sidenav divider */
+    
+    .sidenav hr {
+        border-top: 1px solid rgba(180, 178, 178, 0.541);
+        margin: 2vmin;
+    }
+    /* sidenav - nav */
+    
+    .sidenav ul {
+        padding-top: 8px;
+    }
+    /* sidenav - item */
+    
+    .sidenav ul li {
+        padding: 5px;
+    }
+    
+    .sidenav li a {
+        color: white;
+        height: 3rem;
+        text-decoration: none;
+        font-size: 1.8rem;
+        font-weight: 900;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: .05rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .sidenav li a:hover {
+        font-weight: 900;
+    }
+    /* sidenav - link */
+    
+    .sidenav ul li a {
+        font-size: .85rem;
+        display: inline;
+        color: white;
+        font-weight: 500;
+        margin-top: 5px;
+    }
+    /* top nav - user name */
+    
+    #username {
+        font-weight: 500;
+        font-size: 1.4em;
+        text-transform: capitalize;
+        color: #4e73df;
+        text-align: center;
+    }
+    
+    .btn-logout {
+        background-color: transparent;
+        color: #4e73df;
+        padding: 3px 8px;
+        border-radius: 5px;
+        border: solid 1px rgb(131, 131, 131);
+        font-weight: 500;
+        font-size: 0.8em;
+    }
+    
+    .btn-logout:hover {
+        background-color: #4e73df;
+        color: white;
+    }
+    
+    main {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 5vmin;
+        color: #858796;
+    }
+    
+    #content {
+        width: 82%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    #contentindex {
+        margin: auto;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+    }
+    
+    #contentindex main {
+        margin-top: 10vh;
+    }
+    
+    .row {
+        height: auto;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 4vmin;
+    }
+    /* TOP NAVBAR */
+    
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between !important;
+        box-shadow: 0px 2px 10px #a0a0a0;
+        /* background-color: #1cc88a; */
+        width: 100%;
+    }
+    
+    .navbar form:first-child {
+        border: solid 1px rgb(204, 200, 200);
+        border-radius: 5px;
+    }
+    /* TOP NAVBAR */
+    
+    .navbar-nav {
+        float: right;
+        display: flex;
+        flex-direction: row;
+    }
+    /* TOP NAVBAR-Item */
+    
+    .nav-item {
+        margin: auto;
+    }
+    
+    .nav-item:last-child {
+        margin-left: 0.5vw;
+    }
+    /* meal card */
+    
+    .meal-card {
+        border-radius: 15px !important;
+        border-left: .35rem solid #4e73df!important;
+    }
+    /* meal card BREAKFAST */
+    
+    .breakfast .meal-card {
+        border-left: .35rem solid #f6c23e!important;
+    }
+    /* meal card  BREAKFAST meal type field */
+    
+    .breakfast .meal-card .card-body div:nth-child(1) {
+        color: #f6c23e !important;
+    }
+    /* meal card background BREAKFAST*/
+    
+    .breakfast div div::before {
+        color: #dddfeb!important;
+        font-weight: 900;
+        position: absolute;
+        font-family: 'FontAwesome';
+        font-size: 5VMIN;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        text-rendering: auto;
+        line-height: 1;
+        font-variant: normal;
+        top: 4vmin;
+        right: 3vmin;
+        content: "\f0f4";
+    }
+    /* meal card LUNCH */
+    
+    .lunch .meal-card {
+        border-left: .35rem solid #36b9cc!important;
+    }
+    /* meal card  LUNCH meal type field */
+    
+    .lunch .meal-card .card-body div:nth-child(1) {
+        color: #36b9cc !important;
+    }
+    /* meal card background LUNCH */
+    
+    .lunch div div::before {
+        color: #dddfeb!important;
+        font-weight: 900;
+        position: absolute;
+        font-family: 'FontAwesome';
+        font-size: 5vmin;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        text-rendering: auto;
+        line-height: 1;
+        font-variant: normal;
+        top: 4vmin;
+        right: 3vmin;
+        content: "\f805";
+    }
+    /* meal card DINNER */
+    
+    .dinner .meal-card {
+        border-left: .35rem solid #1cc88a!important;
+    }
+    /* meal card  DINNER meal type field */
+    
+    .dinner .meal-card .card-body div:nth-child(1) {
+        color: #1cc88a !important;
+    }
+    /* meal card backgrond DINNER */
+    
+    .dinner div div::before {
+        color: #dddfeb!important;
+        font-weight: 900;
+        position: absolute;
+        font-family: 'FontAwesome';
+        font-size: 5vmin;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        text-rendering: auto;
+        line-height: 1;
+        font-variant: normal;
+        top: 4vmin;
+        right: 3vmin;
+        content: "\f7ec";
+    }
+    /* meal card type field */
+    
+    .meal-card .card-body div:nth-child(1) {
+        font-weight: 700 !important;
+        margin-bottom: 0px !important;
+        font-size: 0.7rem;
+        text-transform: uppercase !important;
+        line-height: 1.2;
+        margin-bottom: 0.25rem !important;
+    }
+    /* meal card calories field */
+    
+    .meal-card .card-body div:nth-child(2) {
+        color: rgb(90, 92, 105) !important;
+        font-weight: 700 !important;
+        margin-bottom: 0px !important;
+        font-size: 1.25rem;
+        line-height: 1.2;
+    }
+    
+    .meal-card .card-body div:nth-child(2)::after {}
+    /* meal card date field */
+    
+    .meal-card .card-body div:nth-child(3) {
+        margin-top: 1vmin;
+        margin-bottom: 0px !important;
+        font-size: 0.75rem;
+        line-height: 1.2;
+    }
+    /* card */
+    
+    .card {
+        height: 100%;
+        box-shadow: 0 4px 15px -2px #c9c7c7;
+    }
+    /* card container header */
+    
+    .card-header h6 {
+        font-weight: 700 !important;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+    }
+    /* card labels */
+    
+    .card p {
+        text-align: center;
+    }
+    /* card labels */
+    
+    .card p::before {
+        color: rgb(90, 92, 105) !important;
+        font-weight: 500 !important;
+        margin: 0 10px !important;
+    }
+    /* user weight */
+    
+    #user-weight::before {
+        content: "weight  ";
+    }
+    /* user height */
+    
+    #user-height::before {
+        content: "height  ";
+    }
+    /* user age */
+    
+    #user-age::before {
+        content: "age  "
+    }
+    /* user gender */
+    
+    #user-gender::before {
+        content: "gender  "
+    }
+    /* user exercises-level */
+    
+    #user-exercises-level::before {
+        content: "exercises-level  "
+    }
+    /* user user-goal */
+    
+    #user-goal::before {
+        content: "user-goal  "
+    }
+    /* user user-goal-kilo */
+    
+    #user-goal-kilo::before {
+        content: "user-goal-kilo  "
+    }
+    /* user calories-per-day */
+    
+    #user-calories-per-day-goal::before {
+        content: "calories-per-day  \a";
+        white-space: pre;
+    }
+    /* user calories-per-day */
+    
+    #user-calories-per-day::before {
+        content: "BMA Calculation  \a";
+        white-space: pre;
+    }
+    
+    #dasboard-recomendations {
+        margin-top: 5vmin;
+    }
+    /* FLOW SETTINGS FOR DASHBOARD RECENT MEALS */
+    
+    .scrollbar-primary::-webkit-scrollbar {
+        background-color: #F5F5F5;
+    }
+    
+    .scrollbar-primary::-webkit-scrollbar-thumb {
+        background-color: #4285F4;
+    }
+    
+    .scrollbar-primary {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+    
+    .scrollbar-ripe-malinka {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+    
+    .scrollbar-ripe-malinka::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+        background-color: #F5F5F5;
+        border-radius: 10px;
+    }
+    
+    .scrollbar-ripe-malinka::-webkit-scrollbar {
+        width: 12px;
+        background-color: #F5F5F5;
+    }
+    
+    .scrollbar-ripe-malinka::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+        background-color: rgb(231, 231, 231);
+    }
+    
+    .i-container-register {
+        background-color: #4e73df;
+        border-radius: 5px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2.5vh;
+        color: rgb(187, 184, 184);
+        font-size: 0.85rem;
+    }
+    
+    .i-container-register h3 {
+        text-align: left;
+        color: rgb(187, 184, 184);
+        font-size: 0.85rem;
+        text-transform: capitalize;
+    }
+    
+    .i-container-register form input {
+        border-radius: 5px;
+        background-color: transparent;
+        border: solid 1px white;
+        width: 100%;
+        color: white;
+        padding-left: 10px;
+    }
+    
+    .i-container-register form input:focus {
+        background-color: white;
+        color: black;
+    }
+    
+    .i-container-register form ul {
+        display: none;
+    }
+    
+    .i-container-register form label {
+        width: 100%;
+    }
+    
+    .i-container-register form .helptext {
+        display: none;
+    }
+    
+    .i-container-register form li {
+        list-style: none;
+    }
+    
+    .i-container-register form button {
+        margin-top: 4vh;
+        float: right;
+    }
+    
+    .i-container {
+        background-color: #4e73df;
+        border-radius: 5px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2.5vh 0;
+    }
+    
+    #contentindex form label {
+        color: white;
+    }
+    
+    #contentindex form label {
+        color: white;
+    }
+    
+    #contentindex form button {
+        color: white;
+        background-color: transparent;
+        padding: 4px 12px;
+        border-radius: 5px;
+        border: solid 1px white;
+        font-size: .85rem;
+        letter-spacing: 1px;
+    }
+    
+    .i-container a {
+        color: white;
+    }
+    
+    .i-container div:nth-child(1) h1:nth-child(1) {
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        font-weight: 900;
+        text-decoration: none;
+        color: white;
+    }
+    
+    .i-container-register div:nth-child(1) h1:nth-child(1) {
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        font-weight: 900;
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        margin-bottom: 3vh;
+    }
+    
+    .i-container div:nth-child(1) h1:nth-child(1):hover {
+        text-decoration: none;
+        color: white;
+    }
+    
+    .i-container div:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .i-container div:nth-child(2) a {
+        font-size: 1.3rem;
+        margin-top: 2.5vh;
+        text-transform: capitalize;
+    }
+    
+    .i-container div:nth-child(2) a:hover {
+        color: rgb(165, 162, 162);
+        text-decoration: none;
+    }
+    /*  
+
+    MEDIA QUERIS
+
+*/
+    
+    @media only screen and (max-width: 600px) {
+        body {
+            flex-direction: column;
+        }
+        .sidenav {
+            width: 100%;
+            min-height: 150px;
+            position: fixed;
+        }
+        .sidenav ul {
+            display: flex;
+            justify-content: space-evenly;
+            list-style: none;
+        }
+        .sidenav ul li:last-child {
+            display: none;
+        }
+        #content {
+            width: 100%;
+            margin-top: 150px;
+        }
+        #dashboard-card div div::before {
+            color: #0a23af!important;
+            font-weight: 900;
+            position: absolute;
+            font-family: 'FontAwesome';
+            font-size: 7vmin;
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-style: normal;
+            text-rendering: auto;
+            line-height: 1;
+            font-variant: normal;
+            top: 4vmin;
+            right: 3vmin;
+            content: " ";
+        }
+        #user-name {
+            display: none;
+        }
+    }
+    /* ADD MEAL PAGE ! */
+    /* TOP NAVBAR */
+    
+    .navbar {
+        display: flex;
+        justify-content: flex-end !important;
+    }
+    /* add meal card */
+    
+    #add-meal-card {
+        margin: auto;
+    }
+    /* add meal ingredient input field */
+    
+    #add-meal-fields-container div input {
+        margin-top: 3vmin;
+    }
+    /* MY MEALS PAGE */
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between !important;
+    }
+    
+    .editmeals a {
+        color: #4e73df;
+        font-weight: 700;
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-transform: capitalize;
+    }
+    
+    .meal-card-body {
+        width: 40vw;
+    }
+    /* in grid view - hide ingredients */
+    /* .meal-card-2 .meal-card-ingredients {
+    display: none;
+}
+
+#add-meal-fields-container {
+    display: none;
+}
+
+#add-meal-buttons-container {
+    display: none;
+} */
+    /* meals card container */
+    
+    #meals-cards-container {}
+    /* meals list headers  (DATE) */
+    
+    #meals-cards-container h3 {
+        text-align: center;
+        padding: 4vmin;
+        font-weight: 700 !important;
+        font-size: 1.8rem;
+        text-transform: uppercase !important;
+        margin-bottom: 0.25rem !important;
+        color: #5a5b647c;
+    }
+    /* card */
+    
+    #meals-card {}
+    
+    #meals-card .card-header h6 {
+        margin-bottom: auto;
+    }
+    /* card header buttons container */
+    
+    #meals-card .card-header {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: auto;
+    }
+    /* card header buttons  */
+    
+    #meals-card .card-header i {
+        margin-left: 10px;
+    }
+    
+    #meals-card .card-header i:hover {
+        cursor: pointer;
+        color: #5a5b64;
+        font-weight: 900;
+    }
+    /* card body TYPE div  */
+    
+    #meals-card .card-body :nth-child(1) {}
+    /* card body CALORIES div  */
+    
+    #meals-card .card-body :nth-child(2) {}
+    
+    .meal-card-body {
+        display: flex;
+        flex-direction: column;
+        width: 20vw;
+    }
+    /* meal card BREAKFAST */
+    
+    .breakfast-meals .meal-card {
+        border-left: .35rem solid #f6c23e!important;
+    }
+    /* meal card  BREAKFAST meal type field */
+    
+    .breakfast-meals .meal-card .card-body div:nth-child(1) {
+        color: #f6c23e !important;
+    }
+    /* meal card background BREAKFAST*/
+    
+    .breakfast-meals div div::before {
+        color: #dddfeb!important;
+        font-weight: 900;
+        position: absolute;
+        font-family: 'FontAwesome';
+        font-size: 11VMIN;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        text-rendering: auto;
+        line-height: 1;
+        font-variant: normal;
+        top: 9vmin;
+        right: 5vmin;
+        content: "\f0f4";
+    }
+    /* meal card LUNCH */
+    
+    .lunch-meals .meal-card {
+        border-left: .35rem solid #36b9cc!important;
+    }
+    /* meal card  LUNCH meal type field */
+    
+    .lunch-meals .meal-card .card-body div:nth-child(1) {
+        color: #36b9cc !important;
+    }
+    /* meal card background LUNCH */
+    
+    .lunch-meals div div::before {
+        color: #dddfeb!important;
+        font-weight: 900;
+        position: absolute;
+        font-family: 'FontAwesome';
+        font-size: 11VMIN;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        text-rendering: auto;
+        line-height: 1;
+        font-variant: normal;
+        top: 9vmin;
+        right: 5vmin;
+        content: "\f805";
+    }
+    /* meal card DINNER */
+    
+    .dinner-meals .meal-card {
+        border-left: .35rem solid #4e73df !important;
+    }
+    /* meal card  DINNER meal type field */
+    
+    .dinner-meals .meal-card .card-body div:nth-child(1) {
+        color: #4e73df !important;
+    }
+    /* meal card backgrond DINNER */
+    
+    .dinner-meals div div::before {
+        color: #dddfeb!important;
+        font-weight: 900;
+        position: absolute;
+        font-family: 'FontAwesome';
+        font-size: 11vmin;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        text-rendering: auto;
+        line-height: 1;
+        font-variant: normal;
+        top: 9vmin;
+        right: 5vmin;
+        content: "\f7ec";
+    }
+    
+    .user-header {
+        text-align: center;
+        font-size: 1.5rem !important;
+        font-weight: 900 !important;
+        text-transform: uppercase;
+    }
+    
+    .card-header {
+        display: flex !important;
+        justify-content: space-between !important;
+        font-size: 1.2rem !important;
+        font-weight: 900 !important;
+        text-transform: uppercase;
+        color: #5a5b64;
+    }
+    
+    .card-header p:last-child {
+        display: flex !important;
+        justify-content: space-between !important;
+        font-size: .85rem !important;
+        font-weight: 300 !important;
+        text-transform: lowercase;
+    }
+    
+    .card-header a {
+        color: #5a5b64;
+        font-size: 1rem !important;
+        font-weight: 500 !important;
+        text-transform: capitalize;
+        padding: 8px 16px;
+        border-radius: 5px;
+        border: solid 1px #5a5b64
+    }
+    
+    .card-header a:hover {
+        background-color: #5a5b64 !important;
+        color: white;
+        text-decoration: none;
+        border: solid 1px #5a5b64
+    }
+    
+    .createnewmeal {
+        flex-direction: column;
+    }
+    
+    .createnewmeal input {
+        width: 100%;
+        background-color: transparent;
+        border-radius: 5px;
+        border: solid 1px #5a5b64;
+    }
+    
+    .createnewmeal button {
+        margin: 50px auto 0px;
+        width: 50%;
+        background-color: #4285F4;
+        border-radius: 5px;
+        border: solid 1px transparent;
+        color: white;
+        padding: 8px 16px;
+        text-transform: capitalize;
+    }
+    
+    .createnewmeal button:hover {
+        margin: 50px auto 0px;
+        width: 50%;
+        background-color: #5a5b64;
+        border-radius: 5px;
+        border: solid 1px transparent;
+        color: white;
+    }
+    
+    .card-body {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .card-body.up {
+        flex-direction: column;
+    }
+    
+    .card-body:hover {
+        background-color: rgb(184, 184, 184);
+        cursor: pointer;
+    }
+    
+    .meal-card-body:hover {
+        background-color: transparent;
+        cursor: pointer;
+    }
+    
+    .card-body div {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .card-body form {
+        padding-left: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .card-body form label {
+        width: 100%;
+    }
+    
+    .card-body form input {
+        width: 100%;
+        background-color: transparent;
+        border-radius: 5px;
+        border: solid 1px rgb(126, 124, 124);
+        padding-left: 10px;
+    }
+    
+    .card-body form button {
+        background-color: transparent;
+        border-radius: 5px;
+        padding: 5px 10px;
+        text-transform: capitalize;
+        width: 8vw;
+        float: right;
+        font-weight: 300;
+        margin: 2px;
+        border: solid 1px rgb(126, 124, 124);
+    }
+    
+    .card-body p {
+        text-transform: capitalize;
+        font-weight: 500;
+        float: left;
+        font-size: 1.2rem;
+        text-align: left;
+        color: #5a5b64;
+    }
+    
+    .btn-submit {
+        padding: 3px 7px;
+        text-transform: lowercase;
+        border-radius: 5px;
+        font-weight: 500;
+        float: right;
+    }
+    
+    .cardlink:hover {
+        text-decoration: none;
+    }
+    /*  
+
+    MEDIA QUERIS
+
+*/
+    
+    @media only screen and (max-width: 600px) {
+        #meals-card div::before {
+            content: " " !important;
+        }
+    }

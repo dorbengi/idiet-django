@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>IDIET Dashboard</title>
+    <!-- Scrolls -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'idiet/style.css' %}">
+    <script src="https://kit.fontawesome.com/43915e3dcb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="    https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+
+
+
+
+
+    <!-- SIDEBAR -->
+    <div class="sidenav">
+        <a href="#">idiet</a>
+        <hr>
+        <!-- Topbar Navbar -->
+        <ul>
+            <!-- Nav Item - Profile -->
+            <li>
+                <a href="#">Dashboard</a>
+            </li>
+            <!-- Nav Item - Add meal -->
+            <li>
+                <a href="../createnewmeal/">add meal</a>
+            </li>
+            <!-- Nav Item - View meals -->
+            <li>
+                <a href="../mymeals/">my meals</a>
+            </li>
+            <!-- Nav Item - View meals -->
+            <li>
+                <a href="">Guide</a>
+            </li>
+            <!-- Nav Item - View meals -->
+            <li>
+                <a href="">Settings</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /SIDEBAR -->
+
+
+
+    <!-- CONTENT -->
+    <div id="content">
+
+
+
+
+
+
+
+        <!-- Topbar Navbar -->
+        <nav class="navbar navbar-expand mb-4">
+
+            <!-- Search -->
+            <form>
+                <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small search-field" placeholder="Search ingredients...">
+                    <button id="search-button" onclick="getData()" class="btn btn-primary" type="button">
+            <i class="fas fa-search fa-sm"></i>
+          </button>
+                </div>
+            </form>
+
+            <!-- Nav -->
+            <ul class="navbar-nav">
+                <!-- Nav Item - Alerts -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#" role="button">
+                        <i class="fas fa-bell fa-fw"></i>
+                    </a>
+                </li>
+                <!-- Nav Item - Messages -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#" role="button">
+                        <i class="fas fa-envelope fa-fw"></i>
+                    </a>
+                </li>
+                <!-- Nav Item - User Information -->
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="#" role="button">
+                        <img class="img-profile rounded-circle" style="width: 60px; height: 60px;" src="https://www.manufacturingusa.com/sites/manufacturingusa.com/files/default.png">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <span id="username">{{user.username}}</span>
+                    <form action="{% url 'logoutuser' %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-logout">Logout</button>
+                    </form>
+                    {% else %}
+                    <a href="loginuser" class="btn-login">login</a>
+                    <a href="register" class="btn-register">register</a>
+                    <!-- -->
+                    {% endif %}
+                </li>
+            </ul>
+
+        </nav>
+
+
+
+
+
+
+        <main>
+
+
+
+
+            <div class="dummy-div">
+
+
+                <!-- Personal Area -->
+                <div class="row">
+                    <div class="">
+                        <h4>Personal</h4>
+                    </div>
+                </div>
+
+
+                <div class="row">
+
+                    <!-- Personal card -->
+                    <div class="card-container col-xl-8 col-lg-7 mb-4">
+                        <div class="card ">
+                            <!-- Card Header -->
+                            <div class="card-header">
+                                <h6>user details</h6>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body" style="display: flex; justify-content: flex-start;">
+                                <div>
+                                    <!-- user weight -->
+                                    <p id="user-weight"></p>
+                                    <!-- user height -->
+                                    <p id="user-height"></p>
+                                </div>
+                                <div>
+                                    <!-- user gender -->
+                                    <p id="user-gender"></p>
+                                    <!-- user age -->
+                                    <p id="user-age"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BMA Card -->
+                    <div class="col-xl-4 col-lg-5 mb-4">
+                        <div class="card">
+                            <!-- Card Header -->
+                            <div class="card-header">
+                                <h6>BMA</h6>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <!-- user calories per day -->
+                                <p id="user-calories-per-day"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /Personal Area -->
+
+
+
+
+                <div class="row">
+                    <!-- exercises level Card -->
+                    <div class="col-xl-4 col-lg-5 mb-4">
+                        <div class="card">
+                            <!-- Card Header -->
+                            <div class="card-header">
+                                <h6>exercises level</h6>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <p id="user-exercises-level"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Goals Card -->
+                    <div class="col-xl-4 col-lg-5 mb-4">
+                        <div class="card">
+                            <!-- Card Header -->
+                            <div class="card-header">
+                                <h6>Goals</h6>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <!-- user goal lyricl -->
+                                <p id="user-goal"></p>
+                                <!-- user  goal in kilo for a week -->
+                                <p id="user-goal-kilo"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calories per day calc Card -->
+                    <div class="col-xl-4 col-lg-5 mb-4">
+                        <div class="card shadow">
+                            <!-- Card Header -->
+                            <div class="card-header">
+                                <h6>calories</h6>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <!-- user calories per day goal -->
+                                <p id="user-calories-per-day-goal"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Recent Meals Area header -->
+                <div class="row">
+                    <div class="">
+                        <h4>Recent Meals</h4>
+                    </div>
+                </div>
+
+                <!-- Recent Meals Area  -->
+                <div class="row ">
+                    <!-- Recent Meals Area card -->
+                    <div id="dashboard-card-container" class="scrollbar-ripe-malinka">
+                        <!-- Recent Meals Card  -->
+                        <div id="dashboard-card" class="col-xl-3 mb-4">
+                            <div class="card meal-card">
+                                <div class="card-body meal-card-body">
+                                    <!-- meals data is injected here  -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Recent Meals Area  -->
+
+
+                <div class="row">
+                    <!-- Recomendations Area card -->
+                    <div id="dasboard-recomendations" class="col-xl-12 col-lg-5 mb-4">
+                        <div class="card ">
+                            <!-- Card Header -->
+                            <div class="card-header">
+                                <h6>System Recomendation</h6>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <!-- user exercises lvl -->
+                                Eat less
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Recomendations Area  -->
+                </div>
+            </div>
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer class="sticky-footer">
+            <div class="copyright text-center">
+                <span>Copyright © FT & DBG</span>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- /CONTENT  -->
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Spells -->
+    <script src="{% static 'idiet/meals.js' %}"></script>
+    <script src="{% static 'idiet/dashboard.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        initializeUserData()
+    </script>
+
+</body>
+
+</html>

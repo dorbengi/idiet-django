@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>My Meals List</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'idiet/style.css' %}">
+    <script src="https://kit.fontawesome.com/43915e3dcb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="    https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!-- SIDE NAVBAR -->
+    <div class="sidenav">
+        <a href="../dashboard">idiet</a>
+        <hr>
+        <!-- side Navbar -->
+        <ul>
+            <!-- Nav Item - Profile -->
+            <li>
+                <a href="../dashboard">Dashboard</a>
+            </li>
+            <!-- Nav Item - Add meal -->
+            <li>
+                <a href="../createnewmeal">add meal</a>
+            </li>
+            <!-- Nav Item - View meals -->
+            <li>
+                <a href="#">my meals</a>
+            </li>
+            <!-- Nav Item - Guide -->
+            <li>
+                <a href="#">Guide</a>
+            </li>
+            <!-- Nav Item - Settings -->
+            <li>
+                <a href="#">Settings</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /SIDE NAVBAR -->
+
+
+    <!-- CONTENT -->
+    <div id="content">
+
+        <!-- TOP NAVBAR -->
+        <nav class="navbar navbar-expand mb-4">
+            <div class="editmeals">
+                <a href="/createnewmeal">add new meal</a>
+                <a href="/allmeals">see others meals</a>
+            </div>
+            <!-- Nav -->
+            <ul class="navbar-nav">
+                <!-- Nav Item - Alerts -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#" role="button">
+                        <i class="fas fa-bell fa-fw"></i>
+                    </a>
+                </li>
+                <!-- Nav Item - Messages -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#" role="button">
+                        <i class="fas fa-envelope fa-fw"></i>
+                    </a>
+                </li>
+                <!-- Nav Item - User Information -->
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="#" role="button">
+                        <img class="img-profile rounded-circle" style="width: 60px; height: 60px;" src="https://www.manufacturingusa.com/sites/manufacturingusa.com/files/default.png">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <span id="username">{{user.username}}</span>
+                    <form action="{% url 'logoutuser' %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-logout">Logout</button>
+                    </form>
+                    {% else %}
+                    <a href="loginuser" class="btn-login">login</a>
+                    <a href="register" class="btn-register">register</a>
+                    <!-- -->
+                    {% endif %}
+                </li>
+            </ul>
+        </nav>
+
+
+        <main>
+
+            {% for m in meals %}
+            <!-- Meal Card  -->
+            <a href="/meal/{{ m.id }}" class="cardlink">
+                <div id="meals-card" class="col-xl-8 mb-4" style="margin: auto;">
+                    <div class="card meal-card">
+                        <!-- Card Header -->
+                        <div class="card-header">
+                            <p>{{user.username}}'s meal</p>
+                            <p>meal id {{ m.id }}</p>
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <div>
+                                <p>{{m.meal_type}}</p>
+                                <p>{{m.meal_date_crated}}</p>
+                                <p>calories : {{m.meal_calories}}</p>
+                                <p>ingredients : {{m.meal_ingredients}}</p>
+                                <p>{{m.meal_recommandetion}}</p>
+                            </div>
+                            <div>
+                                <p>{{m.meal_calories}}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            {% endfor %}
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="sticky-footer">
+            <div class="copyright text-center">
+                <span>Copyright © FT & DBG</span>
+            </div>
+        </footer>
+
+    </div>
+
+
+
+    <!-- spells -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</body>
+
+</html>
