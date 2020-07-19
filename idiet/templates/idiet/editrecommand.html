@@ -16,13 +16,13 @@
 
     <!-- SIDE NAVBAR -->
     <div class="sidenav">
-        <a href="../../index.html">idiet</a>
+        <a href="../../dashboard">idiet</a>
         <hr>
         <!-- Topbar Navbar -->
         <ul>
             <!-- Nav Item - Profile -->
             <li>
-                <a href="../dashboard">Dashboard</a>
+                <a href="../../dashboard">Dashboard</a>
             </li>
             <!-- Nav Item - Add meal -->
             <li>
@@ -30,7 +30,7 @@
             </li>
             <!-- Nav Item - my meals -->
             <li>
-                <a href="../mymeals">my meals</a>
+                <a href="../../mymeals">my meals</a>
             </li>
             <!-- Nav Item - Guide -->
             <li>
@@ -84,15 +84,15 @@
                 <div class="card">
                     <!-- Card Header -->
                     <div class="card-header">
-                        <h5>Add a recommandetion</h5>
+                        <h5>Add a tip or recommandetion</h5>
                     </div>
                     <!-- Card Body -->
-                    <div class="card-body">
+                    <div class="card-body addtip">
                         <form action="#" method="POST">
                             {% csrf_token %}
                             <h2>{{errMsg}}</h2>
                             {{form.as_p}}
-                            <button type="submit" class="btn-submit">UPDATE meal</button>
+                            <button type="submit" class="btn-submit">Add tip</button>
                         </form>
                     </div>
                 </div>

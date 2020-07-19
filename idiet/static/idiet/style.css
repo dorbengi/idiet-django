@@ -865,6 +865,24 @@
         text-transform: capitalize;
     }
     
+    .addtip input {
+        width: 100%;
+        ;
+    }
+    
+    .addtip button {
+        margin: 30px auto 0px !important;
+        background-color: #4285F4 !important;
+        color: white;
+        border: none;
+        width: 60% !important;
+    }
+    
+    .addtip button:hover {
+        background-color: #5a5b64;
+        color: white;
+    }
+    
     .createnewmeal button:hover {
         margin: 50px auto 0px;
         width: 50%;
@@ -883,8 +901,19 @@
         flex-direction: column;
     }
     
+    .card-body.up button {
+        background-color: #4285F4;
+        color: white;
+        border: none;
+        width: 60%;
+        margin: 40px auto 0px;
+    }
+    
+    .card-body.up button:nth-child(2) {
+        margin: 10px auto 0px;
+    }
+    
     .card-body:hover {
-        background-color: rgb(184, 184, 184);
         cursor: pointer;
     }
     
