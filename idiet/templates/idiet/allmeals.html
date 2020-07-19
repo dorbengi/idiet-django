@@ -112,10 +112,10 @@
                             </div>
                             <div>
                                 {% if m.user_id_id == user.id %}
-                                <a href="/meal/{{ m.id }}">edit</a>
+                                <a href="/meal/{{ m.id }}">Eit</a>
                                 <!-- -->
                                 {% else %}
-                                <a href="/assigntome/{{ m.id }}">recommendation</a>
+                                <a href="/assigntome/{{ m.id }}">Tip</a>
                                 <!-- -->
                                 {% endif %}
                                 <!-- -->
@@ -126,12 +126,11 @@
                             <div>
                                 <p>{{m.meal_type}}</p>
                                 <p>{{m.meal_date_crated}}</p>
-                                <p>calories : {{m.meal_calories}}</p>
+                                <p>Calories : {{m.meal_calories}}</p>
                             </div>
                             <div>
-                                <p>ingredients : {{m.meal_ingredients}}</p>
-                                <p>{{m.meal_recommandetion}}</p>
-                                <p>{{m.meal_calories}}</p>
+                                <p>Ingredients : {{m.meal_ingredients}}</p>
+                                <p>Tip : {{m.meal_recommandetion}}</p>
                             </div>
 
 
